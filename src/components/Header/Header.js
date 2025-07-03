@@ -9,9 +9,9 @@ import logo from '../../assets/images/logo.svg';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = React.useState(false);
-  // This component renders the header of the application
+  // Function to toggle the menu open/close state
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen(prev => !prev);
   }
 
   return (
@@ -21,39 +21,39 @@ export default function Header() {
 
 
       <div className='header-left'>
-        <div className="menu-hamburger" onClick={toggleMenu}>
-          <img src={menuHamburger} alt="menu" />
-        </div>
+        <button className="menu-hamburger" onClick={toggleMenu}>
+          <img src={menuHamburger} alt="Abrir Menu" />
+        </button>
 
 
-        <div className="logo">
+        <a href='/' className="logo">
           <img src={logo} alt="sneakers logo" />
-        </div>
+        </a>
       </div>
 
       
 
       <nav className={`nav ${menuOpen ? 'open' : ''}`}>
 
-        <div className="nav-close" onClick={toggleMenu}>
+        <button className="nav-close" onClick={toggleMenu}>
 
-          <img src={closeMenu} alt="botton close" />
+          <img src={closeMenu} alt="Fechar Menu" />
 
-        </div>
-        <ul className="nav-list">
-          <li><a href="#">Collections</a></li>
-
-
-          <li><a href="#">Men</a></li>
+        </button>
+        <ul className="nav-list" role='menu'>
+          <li><a href="#" role='menuitem'>Collections</a></li>
 
 
-          <li><a href="#">Women</a></li>
+          <li><a href="#" role='menuitem'>Men</a></li>
 
 
-          <li><a href="#">About</a></li>
+          <li><a href="#" role='menuitem'>Women</a></li>
 
 
-          <li><a href="#">Contact</a></li>
+          <li><a href="#" role='menuitem'>About</a></li>
+
+
+          <li><a href="#" role='menuitem'>Contact</a></li>
         </ul>
       </nav>
 

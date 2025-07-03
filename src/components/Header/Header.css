@@ -2,7 +2,7 @@
   display: flex;
   gap: 2rem;
   align-items: center;
-  padding: 2rem 2rem; /*16px 24px*/
+  padding: 2rem 2rem; /*32px 32px*/
   margin:0 2rem 0 2rem ;
   position: relative;
 }
@@ -45,7 +45,6 @@
 .nav-list a:hover{
   color: hsl(220, 13%, 13%);
   border-bottom: 4px solid hsl(26, 100%, 55%); 
-  border-width: 0 0 4px 0 ; /*0px 0px 4px 0px*/
   padding-bottom: 2.9rem; /*4px*/
   transition: color 0.2s ease, border-bottom 0.2s ease;
 
@@ -78,11 +77,10 @@
   border-radius: 1rem; /*16px*/
 }
 
-
-
+ 
 .avatar img{
-  width: 3rem; /*32px*/
-  height: 3rem; /*32px*/
+  width: 3rem; /*48px*/
+  height: 3rem;/*48px*/
   border-radius: 50%;
   cursor: pointer;
   border: 2px solid transparent;
@@ -93,18 +91,33 @@
 }
 
 
+.overlay{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999; /* Certifique-se de que o overlay esteja acima de outros elementos */
+}
 
 /* Menu Hambuger */
 .menu-hamburger{
   display: none;
   cursor: pointer;
+  border: none;
+  padding: 0;
+
+
 }
 .nav-close{
   display: none;
 }
 
+
+/*Responsividade */
 @media(max-width:768px){
-  
   .menu-hamburger{
     display: block;
     margin-right: 1rem; /*16px*/
@@ -113,6 +126,7 @@
   .logo img {
     height: 1.6rem; /* um pouco menor no mobile */
     margin-bottom:0.3rem ;
+    
   }
     
   
@@ -122,14 +136,9 @@
     height: auto;
   }
   .overlay{
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 999; /* Certifique-se de que o overlay esteja acima de outros elementos */
-}
+    display: block;
+  }
+ 
   .header{
     display: flex;
     justify-content: space-between;
@@ -153,9 +162,11 @@
   }
   .nav-close{
   display: block;
-  margin-bottom: 4rem; /*64px*/
-  margin-left: 1rem; 
-  margin-top: 0.6rem;
+  margin: 1rem 0rem 4rem 0.5rem; /*16px*/ 
+  width: 2rem;
+  height: 1.5rem;
+  background: none;
+  border: none;
   cursor: pointer;
   }
   .nav{
@@ -189,7 +200,7 @@
     
   }
   .nav-list a{
-    font-size: 1.2rem bold ; /*20px*/
+    font-size: 1.2rem ; /*20px*/
     font-weight: 700;
     color: hsl(220, 13%, 13%);
   }
