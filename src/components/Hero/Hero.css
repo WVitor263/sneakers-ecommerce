@@ -1,0 +1,107 @@
+.hero{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  padding: 5rem 4rem;
+}
+
+
+.carousel{
+  flex: 1.5;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -9rem;
+
+}
+.main-image{
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.thumbnails{
+  display: flex;
+  gap: 1.8rem;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.thumbnail{
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+
+}
+
+.thumbnail.active{
+  border-color: hsl(26,100%,55%);
+  opacity: 0.6;
+}
+
+.thumbnail:hover{
+  opacity: 0.6;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 500px;
+  
+}
+.hero-text h2 {
+  font-size: 1rem;
+  color: hsl(219,9%,45%);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: hsl(219,9%,45%);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero-text .price{
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+.price .price-info{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.price .priceToday{
+  color: hsl(220,13%,13%);
+  font-size: 2rem;
+
+}
+.price .discount{
+  background-color: hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 100%);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  position: relative;
+  top: 0.2rem;
+}
+.price .oldPrice{
+  color: hsl(219,9%,45%);
+  font-size: 1rem;
+  
+}

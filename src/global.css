@@ -3,3 +3,17 @@
 body {
   font-family: 'Kumbh Sans', sans-serif;
 }
+
+.container {
+  max-width: 1300px; /* ou 1000px se quiser mais justo */
+  margin: 0 auto;
+  padding: 0 2rem; /* margem lateral */
+}
+
+@media (max-width: 768px){
+  .container {
+    padding: 0rem; /* margem lateral reduzida no mobile */
+    max-width: 100%;
+    width: 100%;
+  }
+}
