@@ -13,6 +13,9 @@ import imageThumbail4 from '../../assets/images/tenis/thumbnail/image-product-4-
 import iconsPrev from '../../assets/images/icon-previous.svg';
 import iconsNext from '../../assets/images/icon-next.svg';
 
+import iconsPlus from '../../assets/images/icon-plus.svg';
+import iconsMinus from '../../assets/images/icon-minus.svg';
+
 export default function Hero() {
 
   const [currentImage, setCurrentImage] = React.useState(0);
@@ -32,6 +35,18 @@ export default function Hero() {
 
   const thumbnails = [imageThumbail1, imageThumbail2, imageThumbail3, imageThumbail4];
 
+  const [qty, setQty] = React.useState(0);
+
+  const incrementQty = () => {
+    // Lógica para incrementar a quantidade
+    setQty(qty + 1);
+  }
+  const decrementQty = () => {
+    // Lógica para decrementar a quantidade
+    if (qty > 0) {
+      setQty(qty - 1);
+    }
+  }
 
 
   return (
@@ -111,9 +126,9 @@ export default function Hero() {
         </div>
         
         <div className="buttons">
-          <button className="menus-and-plus">-</button>
-          <span className="quantity">0</span>
-          <button className="menus-and-plus">+</button>
+          <button className="menus-and-plus" onClick={decrementQty}><img src={iconsMinus} alt="icon Minus"/></button>
+          <span className="quantity">{qty}</span>
+          <button className="menus-and-plus" onClick={incrementQty}><img src={iconsPlus} alt="icon Plus" /></button>
           </div>
           <button className="add-to-cart">Add to cart</button>
       </div>

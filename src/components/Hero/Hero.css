@@ -105,3 +105,37 @@
   font-size: 1rem;
   
 }
+
+.buttons {
+  display: flex;
+  align-items: center;     /* alinha tudo verticalmente */
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: hsl(223,64%,98%);
+  width: 160px;      /* ajusta ao conteúdo */
+  padding: 1rem 0.5rem;       /* dá um respiro */
+  border-radius: 0.8rem;
+}
+
+.quantity {
+  flex: 1;                        /* ocupa espaço central */
+  text-align: center;             /* centraliza horizontal */
+  font-size: 1rem;
+  font-weight: bold;
+  color: hsl(220, 13%, 13%);
+}
+.menus-and-plus {
+  background: none;               /* sem fundo */
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menus-and-plus img {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+}
