@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./ProductImage.css";
+import React from 'react';
 
 
  function ProductImage({src, alt}) {

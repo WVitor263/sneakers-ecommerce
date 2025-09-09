@@ -106,7 +106,15 @@
   
 }
 
-.buttons {
+.product-actions{
+  display: flex;
+  justify-content: center; /* centraliza no eixo horizontal */
+  gap: 1rem;  
+  width: 100%;
+  max-width: 32rem; /* limita pra não ficar gigante */
+  margin: 0 auto; 
+}
+.quantity-selector {
   display: flex;
   align-items: center;     /* alinha tudo verticalmente */
   justify-content: space-between;
@@ -114,7 +122,7 @@
   margin-bottom: 1.5rem;
   background-color: hsl(223,64%,98%);
   width: 160px;      /* ajusta ao conteúdo */
-  padding: 1rem 0.5rem;       /* dá um respiro */
+  padding: 0.5rem;       /* dá um respiro */
   border-radius: 0.8rem;
 }
 
@@ -132,10 +140,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 29px;   /* botão quadrado */
+  height: 36px;
 }
 
 .menus-and-plus img {
   width: 12px;
   height: 12px;
   object-fit: contain;
+}
+
+.add-to-cart{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(26,100%,55%);
+  border: none;
+  width: 20rem;
+  height: 3.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  gap: 0.5rem;
+  border-radius: 0.8rem;
+  cursor: pointer;  
+  
+  
+}
+.add-to-cart img{
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+  
+  fill: black;
 }

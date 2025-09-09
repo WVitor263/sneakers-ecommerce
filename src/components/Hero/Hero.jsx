@@ -16,6 +16,10 @@ import iconsNext from '../../assets/images/icon-next.svg';
 import iconsPlus from '../../assets/images/icon-plus.svg';
 import iconsMinus from '../../assets/images/icon-minus.svg';
 
+import iconsCart from '../../assets/images/icon-cart.svg';
+
+
+
 export default function Hero() {
 
   const [currentImage, setCurrentImage] = React.useState(0);
@@ -74,7 +78,7 @@ export default function Hero() {
         </div>
       </div>
 
-       {/* Lightbox */}
+      {/* Lightbox */}
 
       {isLightboxOpen && (
         <div className="lightbox">
@@ -108,32 +112,34 @@ export default function Hero() {
 
         </div>
       )}
-  
+
 
       <div className="hero-text">
         <h2>SNEAKER COMPANY</h2>
         <h1>Fall Limited Edition Sneakers</h1>
         <p>
           These low-profile sneakers are your perfect casual wear companion.
-          Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer. 
-         </p>
+          Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
         <div className="price">
           <div className="price-info">
-          <span className="priceToday">$125.00</span>
-          <span className="discount">50%</span>
+            <span className="priceToday">$125.00</span>
+            <span className="discount">50%</span>
           </div>
-          <span className="oldPrice"><s>$250.00</s></span> 
+          <span className="oldPrice"><s>$250.00</s></span>
         </div>
-        
-        <div className="buttons">
-          <button className="menus-and-plus" onClick={decrementQty}><img src={iconsMinus} alt="icon Minus"/></button>
-          <span className="quantity">{qty}</span>
-          <button className="menus-and-plus" onClick={incrementQty}><img src={iconsPlus} alt="icon Plus" /></button>
+
+        <div className="product-actions" >
+          <div className="quantity-selector">
+            <button className="menus-and-plus" onClick={decrementQty}><img src={iconsMinus} alt="icon Minus" /></button>
+            <span className="quantity">{qty}</span>
+            <button className="menus-and-plus" onClick={incrementQty}><img src={iconsPlus} alt="icon Plus" /></button>
           </div>
-          <button className="add-to-cart">Add to cart</button>
+          <button className="add-to-cart"> <img src={iconsCart} alt="" />Add to cart</button>
+        </div>
       </div>
 
-     
+
 
 
 
