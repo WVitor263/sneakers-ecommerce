@@ -18,7 +18,7 @@
 }
 .main-image{
   width: 100%;
-  max-width: 460px;
+  max-width: 450px;
   height: auto;
   border-radius: 1rem;
   margin-bottom: 1.5rem;
@@ -26,14 +26,14 @@
 
 .thumbnails{
   display: flex;
-  gap: 1.8rem;
+  gap: 2.1rem;
   justify-content: center;
   flex-wrap: nowrap;
 }
 
 .thumbnail{
-  width: 90px;
-  height: 90px;
+  width: 85px;
+  height: 85px;
   object-fit: cover;
   border-radius: 0.5rem;
   border: 2px solid transparent;
@@ -49,6 +49,12 @@
 .thumbnail:hover{
   opacity: 0.6;
 }
+
+
+
+
+
+
 
 .hero-text {
   flex: 1;
@@ -160,16 +166,20 @@
   height: 3.5rem;
   font-size: 1rem;
   font-weight: bold;
-  gap: 0.5rem;
+  gap: 1rem;
   border-radius: 0.8rem;
   cursor: pointer;  
   
   
 }
-.add-to-cart img{
-  width: 1.5rem;
-  height: 1.5rem;
+.add-to-cart svg {
+  width: 19px;
   object-fit: contain;
+    
   
-  fill: black;
 }
+.add-to-cart svg path{
+  fill: hsl(220, 13%, 13%);
+  
+}
+

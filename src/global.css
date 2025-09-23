@@ -12,8 +12,19 @@ body {
 
 @media (max-width: 768px){
   .container {
-    padding: 0rem; /* margem lateral reduzida no mobile */
+    padding: 0; /* margem lateral reduzida no mobile */
     max-width: 100%;
     width: 100%;
+    margin: 0;
+    
   }
+  html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
 }

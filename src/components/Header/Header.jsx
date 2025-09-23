@@ -1,8 +1,8 @@
-
-import React from 'react';
 import './Header.css';
+import React from 'react';
+
 import avatar from '../../assets/images/image-avatar.png';
-import cart from '../../assets/images/icon-cart.svg';
+import IconCart from '../../assets/images/icon-cart.svg?react';
 import menuHamburger from '../../assets/images/icon-menu.svg';
 import closeMenu from '../../assets/images/icon-close.svg';
 import logo from '../../assets/images/logo.svg';
@@ -59,7 +59,7 @@ export default function Header() {
 
       <div className="icons">
         <div className="cart">
-          <img src={cart} alt="cart" />
+          <IconCart className="cart-icon"/>
           <span className="cart__count">3</span>
         </div>
         <div className="avatar">

@@ -16,7 +16,7 @@ import iconsNext from '../../assets/images/icon-next.svg';
 import iconsPlus from '../../assets/images/icon-plus.svg';
 import iconsMinus from '../../assets/images/icon-minus.svg';
 
-import iconsCart from '../../assets/images/icon-cart.svg';
+import CartIcon from '../../assets/images/icon-cart.svg?react';
 
 
 
@@ -135,14 +135,11 @@ export default function Hero() {
             <span className="quantity">{qty}</span>
             <button className="menus-and-plus" onClick={incrementQty}><img src={iconsPlus} alt="icon Plus" /></button>
           </div>
-          <button className="add-to-cart"> <img src={iconsCart} alt="" />Add to cart</button>
+          <button className="add-to-cart"> 
+            <CartIcon className="cart-icon" />
+            Add to cart</button>
         </div>
       </div>
-
-
-
-
-
     </section>
   )
 
