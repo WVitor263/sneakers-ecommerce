@@ -10,6 +10,8 @@ import imageThumbail2 from '../../assets/images/tenis/thumbnail/image-product-2-
 import imageThumbail3 from '../../assets/images/tenis/thumbnail/image-product-3-thumbnail.jpg'
 import imageThumbail4 from '../../assets/images/tenis/thumbnail/image-product-4-thumbnail.jpg'
 
+import iconClose from '../../assets/images/icon-close.svg';
+
 import iconsPrev from '../../assets/images/icon-previous.svg';
 import iconsNext from '../../assets/images/icon-next.svg';
 
@@ -26,16 +28,19 @@ export default function Hero() {
 
   const images = [image1, image2, image3, image4];
 
+
+
   const [isLightboxOpen, setIsLightboxOpen] = React.useState(false);
+  const [lightboxImageIndex, setLightboxImageIndex] = React.useState(0);
 
-  const previousImage = () => {
+  const openLightbox = () =>{
+    setLightboxImageIndex(currentImage);
+    setIsLightboxOpen(true);
+  }
+   const nextLightbox = () => setLightboxImageIndex((prev) => (prev + 1) % images.length);
+  const previousLightbox = () => setLightboxImageIndex((prev) => (prev - 1 + images.length) % images.length);
 
-    setCurrentImage((currentImage - 1 + images.length) % images.length);
-  };
-  const nextImage = () => {
-
-    setCurrentImage((currentImage + 1) % images.length);
-  };
+  
 
   const thumbnails = [imageThumbail1, imageThumbail2, imageThumbail3, imageThumbail4];
 
@@ -59,7 +64,7 @@ export default function Hero() {
       {/* Carousel */}      {/* Imagem Principal */}
       <div className="carousel">
         <img src={images[currentImage]} alt={`Produto ${currentImage + 1}`} className="main-image"
-          onClick={() => setIsLightboxOpen(true)}
+          onClick={openLightbox}
         />
 
 
@@ -85,14 +90,14 @@ export default function Hero() {
           <div className="lightbox-content">
 
 
-            <button className="close-btn" onClick={() => setIsLightboxOpen(false)}>x</button>
+            <button className="close-btn" onClick={() => setIsLightboxOpen(false)}><img src={iconClose} alt="Icon close" /></button>
 
 
-            <button className="prev" onClick={previousImage}><img src={iconsPrev} alt="icons Previus" /></button>
+            <button className="prev" onClick={previousLightbox}><img src={iconsPrev} alt="icons Previus" /></button>
 
-            <img src={images[currentImage]} alt={`Produto ${currentImage + 1}`} className="lightbox-image" />
+            <img src={images[lightboxImageIndex]} alt={`Produto ${lightboxImageIndex + 1}`} className="lightbox-image" />
 
-            <button className="next" onClick={nextImage}><img src={iconsNext} alt="icons Next" /></button>
+            <button className="next" onClick={nextLightbox}><img src={iconsNext} alt="icons Next" /></button>
 
             <div className="lightbox-thumbnails">
               {thumbnails.map((img, index) => (
@@ -100,9 +105,9 @@ export default function Hero() {
                   key={index}
                   src={img}
                   alt={`Thumbnail ${index + 1}`}
-                  className={`thumbnail ${currentImage === index ? 'active' : ''}`}
+                  className={`thumbnail ${lightboxImageIndex === index ? 'active' : ''}`}
                   onClick={() => {
-                    setCurrentImage(index);
+                    setLightboxImageIndex(index);
                   }}
                 />
               ))}
