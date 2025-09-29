@@ -70,15 +70,79 @@
 }
 .lightbox-image{
   width: 100%;
-  border-radius: 1rem;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: 1;
 }
+.lightbox-controls{
+  position: relative;
+  width: 100%;
+  max-width: 500px; 
+  margin: 0 auto; 
+
+}
+.lightbox-controls button{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;  /* largura fixa */
+  height: 50px;
+  cursor: pointer;
+  display: flex;               /* ativa flexbox */
+  align-items: center;         /* centraliza verticalmente */
+  justify-content: center;     /* centraliza horizontalmente */
+
+
+}
+.prev {
+  left: -25px; /* fica colado no lado esquerdo da imagem */
+}
+
+.next {
+  right: -25px; /* fica colado no lado direito da imagem */
+
+}
+.lightbox-controls button img {
+  width: 16px; /* tamanho do ícone dentro */
+  height: 16px;
+  object-fit: contain;
+}
+
+.lightbox-thumbnails{
+  display: flex;
+  gap:1.5rem;
+  justify-content: center;  
+  margin-top: 1.5rem;   
+  flex-wrap: nowrap;
+}
+.lightbox-thumbnails .thumbnail{
+  width: 80px;
+  height: 80px; 
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+} 
+.lightbox-thumbnails .thumbnail.active{
+  border-color: hsl(26,100%,55%);
+  opacity: 0.6;
+  
+}
+
+
+
+
 .close-btn{
   position: absolute;
-  top: -1.5rem;
-  right: -0.5rem;
+  top: -3rem;
+  right: 2.9rem;
   background: none;
   border: none;
   cursor: pointer;
