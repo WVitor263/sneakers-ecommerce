@@ -90,7 +90,9 @@ export default function Hero() {
           <div className="lightbox-content">
 
 
-            <button className="close-btn" onClick={() => setIsLightboxOpen(false)}><IconClose/></button>
+            <button className="close-btn" onClick={() => setIsLightboxOpen(false)}><IconClose className="icon-close"
+            
+            /></button>
 
           <div className="lightbox-controls">
                <img src={images[lightboxImageIndex]} alt={`Produto ${lightboxImageIndex + 1}`} className="lightbox-image" />
