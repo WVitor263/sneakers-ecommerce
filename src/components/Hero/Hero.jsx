@@ -10,10 +10,7 @@ import imageThumbail2 from '../../assets/images/tenis/thumbnail/image-product-2-
 import imageThumbail3 from '../../assets/images/tenis/thumbnail/image-product-3-thumbnail.jpg'
 import imageThumbail4 from '../../assets/images/tenis/thumbnail/image-product-4-thumbnail.jpg'
 
-import IconClose from '../../assets/images/icon-close.svg?react';
-
-import iconsPrev from '../../assets/images/icon-previous.svg';
-import iconsNext from '../../assets/images/icon-next.svg';
+import Lightbox from "../Lightbox/Lightbox";
 
 import iconsPlus from '../../assets/images/icon-plus.svg';
 import iconsMinus from '../../assets/images/icon-minus.svg';
@@ -86,38 +83,15 @@ export default function Hero() {
       {/* Lightbox */}
 
       {isLightboxOpen && (
-        <div className="lightbox">
-          <div className="lightbox-content">
-
-
-            <button className="close-btn" onClick={() => setIsLightboxOpen(false)}><IconClose className="icon-close"
-            
-            /></button>
-
-          <div className="lightbox-controls">
-               <img src={images[lightboxImageIndex]} alt={`Produto ${lightboxImageIndex + 1}`} className="lightbox-image" />
-            <button className="prev" onClick={previousLightbox}><img src={iconsPrev} alt="icons Previus" /></button>
-            <button className="next" onClick={nextLightbox}><img src={iconsNext} alt="icons Next" /></button>
-
-            </div>
-
-            <div className="lightbox-thumbnails">
-              {thumbnails.map((img, index) => (
-                <img
-                  key={index}
-                  src={img}
-                  alt={`Thumbnail ${index + 1}`}
-                  className={`thumbnail ${lightboxImageIndex === index ? 'active' : ''}`}
-                  onClick={() => {
-                    setLightboxImageIndex(index);
-                  }}
-                />
-              ))}
-            </div>
-
-          </div>
-
-        </div>
+        <Lightbox
+          images={images}
+          thumbnails={thumbnails}   
+          lightboxImageIndex={lightboxImageIndex}
+          setLightboxImageIndex={setLightboxImageIndex}
+          onClose={() => setIsLightboxOpen(false)} 
+          nextLightbox={nextLightbox}
+          previousLightbox={previousLightbox}
+          /> 
       )}
 
 

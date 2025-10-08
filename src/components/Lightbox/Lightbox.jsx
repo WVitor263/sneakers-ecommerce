@@ -12,7 +12,7 @@ export default function Lightbox({
   setLightboxImageIndex,
   onClose,
   nextLightbox,
-  previousLightbox,
+  previousLightbox
 }){
   React.useEffect(() => {
     const handleEsc=(event) => {
@@ -32,7 +32,7 @@ export default function Lightbox({
                 <div className="lightbox-content">
       
       
-                  <button className="close-btn" onClick={() => setIsLightboxOpen(false)}><IconClose className="icon-close"
+                  <button className="close-btn" onClick={() => onClose()}><IconClose className="icon-close"
                   
                   /></button>
       
